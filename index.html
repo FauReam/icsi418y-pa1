@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow — My Task List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="app-header">
+            <div class="header-row">
+                <p class="eyebrow">Task Manager</p>
+                <div class="update-zone">
+                    <button type="button" id="update-button">&#8635; Sync</button>
+                    <span id="update-status"></span>
+                </div>
+            </div>
+            <h1>My Task List</h1>
+            <p class="subtitle">A quiet place for the things you need to do.</p>
+        </header>
+
+        <section class="panel">
+            <form id="task-form" novalidate>
+                <div class="field-grow">
+                    <label for="task-input">Task</label>
+                    <input id="task-input" type="text" placeholder="e.g. Finish project proposal" autocomplete="off">
+                </div>
+
+                <div class="field-fixed">
+                    <label for="priority">Priority</label>
+                    <select id="priority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-add">Add Task</button>
+            </form>
+            <p id="error-message" class="error-message" role="alert" hidden>Please enter a task name.</p>
+        </section>
+
+        <section class="panel">
+            <div class="list-header">
+                <h2>Tasks</h2>
+                <p id="task-stats" class="task-stats">0 tasks · 0 completed</p>
+            </div>
+            <div id="task-list"></div>
+            <p id="empty-state" class="empty-state">Nothing here yet. Add your first task above.</p>
+        </section>
+    </main>
+</body>
+</html>
